@@ -19,12 +19,6 @@ workflows:
             -serial $UNITY_SERIAL \
             -username $UNITY_EMAIL \
             -password $UNITY_PASSWORD
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ff804e26a205ae65816efa0e6bf10f73350c5342
       - name: Build the project
         script: |
           echo "Building Unity project..."
