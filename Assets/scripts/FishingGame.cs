@@ -15,7 +15,7 @@ public class FishingGame : MonoBehaviour
     public Image rodImage;
     public Sprite rodIdle;
     public Sprite rodInWater;
-    
+
     [Header("Catch")]
     public Image catchImage;
     public Image catchImage2;
@@ -31,7 +31,10 @@ public class FishingGame : MonoBehaviour
     private bool sliderMovingRight = true;
     private void Awake()
     {
-        PlayerPrefs.SetInt("score",0);
+        PlayerPrefs.SetInt("score", 0);
+        if (!PlayerPrefs.HasKey("bestscore")) {
+            PlayerPrefs.SetInt("bestscore", 0);
+        }
     }
     void Start()
     {
@@ -54,10 +57,15 @@ public class FishingGame : MonoBehaviour
 
     void OnFishingButton()
     {
+        
         // ѕервый клик Ч закидываем удочку
         if (!isFishing && !fishingSlider.gameObject.activeSelf)
         {
             StartFishing();
+            if (PlayerPrefs.GetInt("sound") == 1)
+            {
+                GameObject.Find("clickkk").GetComponent<AudioSource>().Play();
+            }
         }
         // ¬торой клик Ч провер€ем результат
         else if (isFishing)
@@ -118,7 +126,7 @@ public class FishingGame : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         scoretext.text = score.ToString();
         if (PlayerPrefs.GetInt("bestscore") < score) {
-            PlayerPrefs.SetInt("bestcscore", score);
+            PlayerPrefs.SetInt("bestscore", score);
 
         }
 
@@ -127,6 +135,10 @@ public class FishingGame : MonoBehaviour
 
     void CatchTrash()
     {
+        if (PlayerPrefs.GetInt("sound")==1)
+        {
+            GameObject.Find("wrong").GetComponent<AudioSource>().Play();
+        }
         Sprite trash = trashSprites[Random.Range(0, trashSprites.Length)];
         catchImage.sprite = trash;
         catchImage.gameObject.SetActive(true);
@@ -138,7 +150,10 @@ public class FishingGame : MonoBehaviour
     {
         successText.gameObject.SetActive(true);
         successText.text = "YOU CAUGHT A FISH!!!\n +" + score.ToString();
-
+        if (PlayerPrefs.GetInt("sound") == 1)
+        {
+            GameObject.Find("soundeffect").GetComponent<AudioSource>().Play();
+        }
         yield return new WaitForSeconds(3f);
         fishingButton.gameObject.SetActive(true);
         successText.gameObject.SetActive(false);

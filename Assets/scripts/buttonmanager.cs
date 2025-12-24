@@ -21,6 +21,21 @@ public class buttonmanager : MonoBehaviour
                 this.GetComponent<Image>().sprite = off;
             }
         }
+        else {
+            if (PlayerPrefs.HasKey("sound"))
+            {
+                if (PlayerPrefs.GetInt("sound") == 1) {
+                    this.GetComponent<Image>().sprite = on;
+                }
+                else{
+                    this.GetComponent<Image>().sprite = off;
+                }
+            }
+            else {
+                PlayerPrefs.SetInt("sound", 1);
+                
+            }
+        }
     }
     public void MusicOnOff()
     {
@@ -42,11 +57,14 @@ public class buttonmanager : MonoBehaviour
     {
         if (this.GetComponent<Image>().sprite == off)
         {
-          
+                PlayerPrefs.SetInt("sound", 1);
+
             this.GetComponent<Image>().sprite = on;
         }
         else
         {
+            PlayerPrefs.SetInt("sound", 0);
+
             this.GetComponent<Image>().sprite = off;
 
         }
