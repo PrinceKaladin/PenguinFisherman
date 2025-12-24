@@ -1394,7 +1394,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8f05517f093aabc41976da270ba5fff9, type: 3}
+    m_Font: {fileID: 12800000, guid: 73b293ffb3e064441a97edb5b60f429a, type: 3}
     m_FontSize: 181
     m_FontStyle: 0
     m_BestFit: 0
@@ -1687,7 +1687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8f05517f093aabc41976da270ba5fff9, type: 3}
+    m_Font: {fileID: 12800000, guid: 73b293ffb3e064441a97edb5b60f429a, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -1925,7 +1925,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8f05517f093aabc41976da270ba5fff9, type: 3}
+    m_Font: {fileID: 12800000, guid: 73b293ffb3e064441a97edb5b60f429a, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -2583,7 +2583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1955930903
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2626,7 +2626,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8f05517f093aabc41976da270ba5fff9, type: 3}
+    m_Font: {fileID: 12800000, guid: 73b293ffb3e064441a97edb5b60f429a, type: 3}
     m_FontSize: 181
     m_FontStyle: 0
     m_BestFit: 0
